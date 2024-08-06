@@ -2,10 +2,10 @@ import praw
 from PyDictionary import PyDictionary
 import enchant
 
-client_id='n60KwwX559we8LVNZGqy7Q'
-client_secert='	UQYX9-vYQ1atbryMLW7-xYD80NXLMg'
-username='Numerous_House_8121'
-password='AKShay@2003'
+client_id=''
+client_secert='	'
+username='reddit_user_name'
+password=' password of account '
 
 reddit_instance=praw.Reddit(
     client_id=client_id,
