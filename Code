@@ -25,6 +25,7 @@ for submission in top_25_submissions :
 subreddit = reddit_instance.submission('testingground4bots')
 submission.reply = (title="this is my test post from my bot", selftext=" how are you my friend ")
 
-#submission = reddit_instance.submission('18tp7tt')
-#submission.reply(" This the comment from by bot" 
+# for Automated comments 
+#submission = reddit_instance.submission(' post path ')
+#submission.reply(" This the comment from by bot" )
                  
