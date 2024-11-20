@@ -1,0 +1,41 @@
+import praw
+from PyDictionary import PyDictionary
+import enchant
+
+# Reddit API credentials
+client_id = 'your_client_id'
+client_secret = 'your_client_secret'
+username = 'reddit_username'
+password = 'reddit_password'
+
+# Initialize Reddit instance
+reddit_instance = praw.Reddit(
+    client_id=client_id,
+    client_secret=client_secret,
+    username=username,
+    password=password,
+    user_agent='commentBot'
+)
+
+# Verify the Reddit instance
+print(f"Logged in as: {reddit_instance.user.me()}")
+
+# Fetch and display top 25 hot submissions from 'dogs' subreddit
+subreddit = reddit_instance.subreddit('dogs')
+top_25_submissions = subreddit.hot(limit=25)
+print("\nTop 25 Hot Posts from r/dogs:")
+for submission in top_25_submissions:
+    print(submission.title)
+
+# Post a new submission in 'testingground4bots' subreddit
+test_subreddit = reddit_instance.subreddit('testingground4bots')
+new_post = test_subreddit.submit(
+    title="This is my test post from my bot",
+    selftext="How are you, my friend?"
+)
+print(f"New post created: {new_post.title}")
+
+# Reply to a specific post
+post = reddit_instance.submission(id='post_id_here')  # Replace 'post_id_here' with the actual post ID
+comment = post.reply("This is a comment from my bot.")
+print(f"Comment posted: {comment.body}")
