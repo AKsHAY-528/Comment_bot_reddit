@@ -35,7 +35,3 @@ new_post = test_subreddit.submit(
 )
 print(f"New post created: {new_post.title}")
 
-# Reply to a specific post
-post = reddit_instance.submission(id='post_id_here')  # Replace 'post_id_here' with the actual post ID
-comment = post.reply("This is a comment from my bot.")
-print(f"Comment posted: {comment.body}")
